@@ -1,4 +1,4 @@
-name: ActionS
+name: Action
 
 on:
   pull_request: {}
@@ -21,3 +21,4 @@ jobs:
         with:
           name: Unity Builder
           path: build
+          retention-days: 90
