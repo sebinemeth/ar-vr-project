@@ -240,6 +240,8 @@ struct List_1_tFED0F30EE65D995591571D3CD2C10F22439CB317;
 struct List_1_t55B85B981AC5FD6A5358491F90FE354F78BB97DE;
 // System.Collections.Generic.List`1<UnityEngine.GUILayoutEntry>
 struct List_1_tA5BCD116CC751A5F35C7D3D7B96DC3A5D22B9C82;
+// System.Collections.Generic.List`1<UnityEngine.GameObject>
+struct List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B;
 // System.Collections.Generic.List`1<UnityEngine.TextCore.Glyph>
 struct List_1_t95DB74B8EE315F8F92B7B96D93C901C8C3F6FE2C;
 // System.Collections.Generic.List`1<UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord>
@@ -494,6 +496,8 @@ struct ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A;
 struct BasePoseProvider_t55E2883DF2C8052200284D64B68471636876FA1D;
 // UnityEngine.Yoga.BaselineFunction
 struct BaselineFunction_t13AFADEF52F63320B2159C237635948AEB801679;
+// UnityEngine.UI.Button
+struct Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098;
 // System.Byte
 struct Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3;
 // UnityEngine.Camera
@@ -11007,6 +11011,26 @@ struct PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3  : public Mono
 	ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* ___arPlaneManager_5;
 	// UnityEngine.UI.Text PointCloudParser::countStr
 	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___countStr_6;
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> PointCloudParser::planes
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___planes_7;
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> PointCloudParser::inliers
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___inliers_8;
+	// System.Boolean PointCloudParser::verbose
+	bool ___verbose_9;
+	// System.Single PointCloudParser::minDist
+	float ___minDist_10;
+	// System.Int32 PointCloudParser::minInliers
+	int32_t ___minInliers_11;
+	// System.Int32 PointCloudParser::maxIter
+	int32_t ___maxIter_12;
+	// UnityEngine.GameObject PointCloudParser::planeSzinPrefab
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeSzinPrefab_13;
+	// UnityEngine.GameObject PointCloudParser::planeFonakPrefab
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeFonakPrefab_14;
+	// UnityEngine.GameObject PointCloudParser::pointPrefab
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pointPrefab_15;
+	// UnityEngine.UI.Button PointCloudParser::button
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___button_16;
 };
 
 // UnityEngine.SpatialTracking.TrackedPoseDriver
@@ -13350,12 +13374,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3774[7] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3779[3] = 
 {
 	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3784[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3784[13] = 
+{
+	static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointCloudManager_4)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___arPlaneManager_5)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___countStr_6)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planes_7)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___inliers_8)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___verbose_9)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minDist_10)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minInliers_11)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___maxIter_12)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeSzinPrefab_13)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeFonakPrefab_14)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointPrefab_15)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___button_16)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3786[3] = 
 {
 	static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___IsTextualNodeBitmap_0)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___CanReadContentAsBitmap_1)),static_cast<int32_t>(offsetof(XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields, ___HasValueBitmap_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3787[3] = 
-{
-	static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointCloudManager_4)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___arPlaneManager_5)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___countStr_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3791[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};
