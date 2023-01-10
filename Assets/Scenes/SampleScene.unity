@@ -5585,11 +5585,12 @@ MonoBehaviour:
   planes: []
   inliers: []
   verbose: 0
-  minDist: 0.005
-  minInliers: 40
+  minDist: 0.01
+  minInliers: 15
   maxIter: 1000
-  planeSzinPrefab: {fileID: 8939414973896462968, guid: bf7ca9d390b7042b78841af8bde229d2, type: 3}
-  planeFonakPrefab: {fileID: 8939414973896462968, guid: ca406aece0b934bfc9963343c32fc5c3, type: 3}
+  maxNumPlanes: 1
+  planeSzinPrefab: {fileID: 8939414973896462968, guid: 1a3d0ab7bbd464a2289873079cc07853, type: 3}
+  planeFonakPrefab: {fileID: 8939414973896462968, guid: 1a3d0ab7bbd464a2289873079cc07853, type: 3}
   pointPrefab: {fileID: 2875868917001606932, guid: 71839c80115654f039cc0b94282529b2, type: 3}
   button: {fileID: 1828601337}
 --- !u!114 &1190866763

@@ -17,6 +17,7 @@ public class PointCloudParser : MonoBehaviour
     public float minDist = 0.01f;
     public int minInliers = 10;
     public int maxIter = 100;
+    public int maxNumPlanes = 1;
 
     public GameObject planeSzinPrefab;
     public GameObject planeFonakPrefab;
@@ -64,7 +65,9 @@ public class PointCloudParser : MonoBehaviour
             }
         }
 
-        Clear();
+        if (maxNumPlanes == -1) {
+            Clear();
+        }
 
         CollectPlanes(updatedPoints);
         countStr.text = $"{planes.Count} planes";
@@ -108,7 +111,7 @@ public class PointCloudParser : MonoBehaviour
                 return;
             }
 
-            if (true /*planes.Count < 1*/)
+            if (maxNumPlanes == -1 || planes.Count < maxNumPlanes)
             {
                 Vector3 center = new Vector3(0, 0, 0);
                 foreach (var i in bestInliers)
@@ -121,13 +124,11 @@ public class PointCloudParser : MonoBehaviour
                     planeSzinPrefab,
                     center,
                     Quaternion.FromToRotation(Vector3.up, bestPlane.normal)
-                //new Quaternion(bestPlane.normal.x, bestPlane.normal.y, bestPlane.normal.z, 1)
                 ));
                 planes.Add(Instantiate(
                     planeFonakPrefab,
                     center,
                     Quaternion.FromToRotation(Vector3.up, bestPlane.flipped.normal)
-                //new Quaternion(bestPlane.flipped.normal.x, bestPlane.flipped.normal.y, bestPlane.flipped.normal.z, 1)
                 ));
 
                 foreach (var i in bestInliers)
@@ -172,7 +173,7 @@ public class PointCloudParser : MonoBehaviour
 
         foreach (Vector3 point in points)
         {
-            float dist = plane.GetDistanceToPoint(point);
+            float dist = Math.Abs(plane.GetDistanceToPoint(point));
             if (dist < minDist)
             {
                 inliers.Add(point);
