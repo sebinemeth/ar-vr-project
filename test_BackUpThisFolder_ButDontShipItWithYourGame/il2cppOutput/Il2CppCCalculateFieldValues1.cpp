@@ -240,8 +240,6 @@ struct List_1_tFED0F30EE65D995591571D3CD2C10F22439CB317;
 struct List_1_t55B85B981AC5FD6A5358491F90FE354F78BB97DE;
 // System.Collections.Generic.List`1<UnityEngine.GUILayoutEntry>
 struct List_1_tA5BCD116CC751A5F35C7D3D7B96DC3A5D22B9C82;
-// System.Collections.Generic.List`1<UnityEngine.GameObject>
-struct List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B;
 // System.Collections.Generic.List`1<UnityEngine.TextCore.Glyph>
 struct List_1_t95DB74B8EE315F8F92B7B96D93C901C8C3F6FE2C;
 // System.Collections.Generic.List`1<UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord>
@@ -11046,34 +11044,36 @@ struct PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3  : public Mono
 	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___countStr_6;
 	// System.Collections.Generic.List`1<PointCloudParser/PlaneDetection> PointCloudParser::planes
 	List_1_t4599184368801A96BC1487DEFE8D6359B3FF10C1* ___planes_7;
-	// System.Collections.Generic.List`1<UnityEngine.GameObject> PointCloudParser::inliers
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___inliers_8;
 	// System.Collections.Generic.List`1<PointCloudParser/PointDetection> PointCloudParser::detectedPoints
-	List_1_tA33AE2E1AAD275FA90D5F33E921AC21D28610A24* ___detectedPoints_9;
+	List_1_tA33AE2E1AAD275FA90D5F33E921AC21D28610A24* ___detectedPoints_8;
 	// System.Single PointCloudParser::minDist
-	float ___minDist_10;
+	float ___minDist_9;
 	// System.Int32 PointCloudParser::minInliers
-	int32_t ___minInliers_11;
+	int32_t ___minInliers_10;
 	// System.Int32 PointCloudParser::maxIter
-	int32_t ___maxIter_12;
+	int32_t ___maxIter_11;
 	// System.Int32 PointCloudParser::planeLifetime
-	int32_t ___planeLifetime_13;
+	int32_t ___planeLifetime_12;
 	// System.Int32 PointCloudParser::pointLifetime
-	int32_t ___pointLifetime_14;
+	int32_t ___pointLifetime_13;
 	// UnityEngine.GameObject PointCloudParser::planeSzinPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeSzinPrefab_15;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeSzinPrefab_14;
 	// UnityEngine.GameObject PointCloudParser::planeFonakPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeFonakPrefab_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeFonakPrefab_15;
 	// UnityEngine.GameObject PointCloudParser::planeClickedPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedPrefab_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedPrefab_16;
 	// UnityEngine.GameObject PointCloudParser::pointPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pointPrefab_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pointPrefab_17;
 	// UnityEngine.GameObject PointCloudParser::planeClickedSzin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedSzin_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedSzin_18;
 	// UnityEngine.GameObject PointCloudParser::planeClickedFonak
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedFonak_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedFonak_19;
+	// UnityEngine.GameObject PointCloudParser::arCameraObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arCameraObject_20;
 	// UnityEngine.UI.Button PointCloudParser::button
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___button_21;
+	// System.Boolean PointCloudParser::detectPlanes
+	bool ___detectPlanes_22;
 };
 
 // UnityEngine.SpatialTracking.TrackedPoseDriver
@@ -13420,9 +13420,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3779[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3780[2] = 
 {
 	static_cast<int32_t>(offsetof(PointDetection_t4308FB71636D3C8B0F1C5CDB78CCF47DB7A9B8D4, ___U3CposU3Ek__BackingField_0)),static_cast<int32_t>(offsetof(PointDetection_t4308FB71636D3C8B0F1C5CDB78CCF47DB7A9B8D4, ___U3CageU3Ek__BackingField_1)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3781[18] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3781[19] = 
 {
-	static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointCloudManager_4)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___arCamera_5)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___countStr_6)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planes_7)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___inliers_8)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___detectedPoints_9)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minDist_10)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minInliers_11)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___maxIter_12)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeLifetime_13)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointLifetime_14)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeSzinPrefab_15)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeFonakPrefab_16)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedPrefab_17)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointPrefab_18)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedSzin_19)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedFonak_20)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___button_21)),};
+	static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointCloudManager_4)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___arCamera_5)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___countStr_6)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planes_7)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___detectedPoints_8)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minDist_9)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___minInliers_10)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___maxIter_11)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeLifetime_12)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointLifetime_13)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeSzinPrefab_14)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeFonakPrefab_15)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedPrefab_16)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___pointPrefab_17)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedSzin_18)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___planeClickedFonak_19)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___arCameraObject_20)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___button_21)),static_cast<int32_t>(offsetof(PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3, ___detectPlanes_22)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3783[3] = 
 {
 	static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_nTag_0)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___m_aValue_1)),static_cast<int32_t>(offsetof(ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F, ___elist_2)),};

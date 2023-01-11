@@ -12,7 +12,6 @@ public class PointCloudParser : MonoBehaviour
     public Camera arCamera;
     public Text countStr;
     private List<PlaneDetection> planes = new List<PlaneDetection>();
-    public List<GameObject> inliers = new List<GameObject>();
     private List<PointDetection> detectedPoints = new List<PointDetection>();
 
     public float minDist = 0.01f;
@@ -29,7 +28,11 @@ public class PointCloudParser : MonoBehaviour
     private GameObject planeClickedSzin;
     private GameObject planeClickedFonak;
 
+    public GameObject arCameraObject;
+
     public Button button;
+
+    private bool detectPlanes = true;
 
     private void OnEnable()
     {
@@ -39,12 +42,6 @@ public class PointCloudParser : MonoBehaviour
 
     private void Clear()
     {
-        foreach (var i in inliers)
-        {
-            Destroy(i);
-        }
-        inliers.Clear();
-
         for (int i = 0; i < planes.Count; i++)
         {
             planes[i].age++;
@@ -97,8 +94,10 @@ public class PointCloudParser : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            Destroy(planeClickedSzin);
-            Destroy(planeClickedFonak);
+            planeClickedPrefab.SetActive(false);
+            detectPlanes = true;
+            // Destroy(planeClickedSzin);
+            // Destroy(planeClickedFonak);
             if (planes.Count == 0)
             {
                 return;
@@ -120,15 +119,26 @@ public class PointCloudParser : MonoBehaviour
                 }
             }
             Vector3 hitPoint = ray.GetPoint(minEnter);
-            planeClickedSzin = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.normal));
-            planeClickedFonak = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.flipped.normal));
+            // planeClickedSzin = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.normal));
+            // planeClickedFonak = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.flipped.normal));
+            
 
+            Vector3 cameraPos = arCameraObject.transform.position;
+            if (!minPlane.GetSide(cameraPos)) {
+                minPlane = minPlane.flipped;
+            }
+
+            planeClickedPrefab.transform.position = hitPoint;
+            planeClickedPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, minPlane.normal);
+            planeClickedPrefab.SetActive(true);
+            detectPlanes = false;
+            Clear();
         }
     }
 
     void CollectPlanes(List<Vector3> points)
     {
-        while (true)
+        while (detectPlanes)
         {
             // check if point cloud is empty
             if (points.Count == 0)
@@ -185,11 +195,6 @@ public class PointCloudParser : MonoBehaviour
                     Quaternion.FromToRotation(Vector3.up, bestPlane.flipped.normal)
                 )
             ));
-
-            foreach (var i in bestInliers)
-            {
-                inliers.Add(Instantiate(pointPrefab, i, Quaternion.identity));
-            }
 
             // remove bestInliers from point cloud
             for (int i = 0; i < bestInliers.Count; i++)

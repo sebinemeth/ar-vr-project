@@ -49959,34 +49959,36 @@ struct PointCloudParser_t18887F5D4BBB99935E93ABE37DF1597ADBA5EED3  : public Mono
 	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___countStr_6;
 	// System.Collections.Generic.List`1<PointCloudParser/PlaneDetection> PointCloudParser::planes
 	List_1_t4599184368801A96BC1487DEFE8D6359B3FF10C1* ___planes_7;
-	// System.Collections.Generic.List`1<UnityEngine.GameObject> PointCloudParser::inliers
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___inliers_8;
 	// System.Collections.Generic.List`1<PointCloudParser/PointDetection> PointCloudParser::detectedPoints
-	List_1_tA33AE2E1AAD275FA90D5F33E921AC21D28610A24* ___detectedPoints_9;
+	List_1_tA33AE2E1AAD275FA90D5F33E921AC21D28610A24* ___detectedPoints_8;
 	// System.Single PointCloudParser::minDist
-	float ___minDist_10;
+	float ___minDist_9;
 	// System.Int32 PointCloudParser::minInliers
-	int32_t ___minInliers_11;
+	int32_t ___minInliers_10;
 	// System.Int32 PointCloudParser::maxIter
-	int32_t ___maxIter_12;
+	int32_t ___maxIter_11;
 	// System.Int32 PointCloudParser::planeLifetime
-	int32_t ___planeLifetime_13;
+	int32_t ___planeLifetime_12;
 	// System.Int32 PointCloudParser::pointLifetime
-	int32_t ___pointLifetime_14;
+	int32_t ___pointLifetime_13;
 	// UnityEngine.GameObject PointCloudParser::planeSzinPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeSzinPrefab_15;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeSzinPrefab_14;
 	// UnityEngine.GameObject PointCloudParser::planeFonakPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeFonakPrefab_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeFonakPrefab_15;
 	// UnityEngine.GameObject PointCloudParser::planeClickedPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedPrefab_17;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedPrefab_16;
 	// UnityEngine.GameObject PointCloudParser::pointPrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pointPrefab_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pointPrefab_17;
 	// UnityEngine.GameObject PointCloudParser::planeClickedSzin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedSzin_19;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedSzin_18;
 	// UnityEngine.GameObject PointCloudParser::planeClickedFonak
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedFonak_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeClickedFonak_19;
+	// UnityEngine.GameObject PointCloudParser::arCameraObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arCameraObject_20;
 	// UnityEngine.UI.Button PointCloudParser::button
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___button_21;
+	// System.Boolean PointCloudParser::detectPlanes
+	bool ___detectPlanes_22;
 };
 
 // UnityEngine.UIElements.PopupWindow
