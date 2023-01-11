@@ -26,7 +26,23 @@ extern void PointCloudParser_GetRandomPlane_m65DB675C232493A88CA1D997802EAD768ED
 extern void PointCloudParser_GetInliers_m2915314526250023096E86FC71E18D83AA9E7165 (void);
 // 0x00000007 System.Void PointCloudParser::.ctor()
 extern void PointCloudParser__ctor_mEBB5E6F379DBFCEA2906F7BE92496CB04D6C7D13 (void);
-static Il2CppMethodPointer s_methodPointers[7] = 
+// 0x00000008 System.Void PointCloudParser/PlaneDetection::.ctor(UnityEngine.Plane,UnityEngine.GameObject,UnityEngine.GameObject)
+extern void PlaneDetection__ctor_mE5F3C0EBFFF4380E16286DB9F6C5F9F96DB88E53 (void);
+// 0x00000009 System.Int32 PointCloudParser/PlaneDetection::get_age()
+extern void PlaneDetection_get_age_m9538578C410A19C238C934DE7FD37EE6657D1F92 (void);
+// 0x0000000A System.Void PointCloudParser/PlaneDetection::set_age(System.Int32)
+extern void PlaneDetection_set_age_m45AA6168CFE0D4CDD78D8E4195FD0B623C1F6CE1 (void);
+// 0x0000000B System.Void PointCloudParser/PointDetection::.ctor(UnityEngine.Vector3,System.Int32)
+extern void PointDetection__ctor_m428FD3652375BB282FDCBC2CC34570624FFC2826 (void);
+// 0x0000000C UnityEngine.Vector3 PointCloudParser/PointDetection::get_pos()
+extern void PointDetection_get_pos_m2EEFAC4589B8628855A0AB8342B8079C4AABBCA3 (void);
+// 0x0000000D System.Void PointCloudParser/PointDetection::set_pos(UnityEngine.Vector3)
+extern void PointDetection_set_pos_mB0631DE69EE3712A54B8640C2ABC16B34B9DC5E7 (void);
+// 0x0000000E System.Int32 PointCloudParser/PointDetection::get_age()
+extern void PointDetection_get_age_mF35E53FC3F426F0674F97D98F0CACDD0E3ED730D (void);
+// 0x0000000F System.Void PointCloudParser/PointDetection::set_age(System.Int32)
+extern void PointDetection_set_age_mA645591D983879074E508868605E3AD78F55D127 (void);
+static Il2CppMethodPointer s_methodPointers[15] = 
 {
 	PointCloudParser_OnEnable_m82F68E157200E2C504A8B16A686A135247862141,
 	PointCloudParser_Clear_mA5788FA61FD4D929C0AF609B57F34F5503DF49C1,
@@ -35,22 +51,38 @@ static Il2CppMethodPointer s_methodPointers[7] =
 	PointCloudParser_GetRandomPlane_m65DB675C232493A88CA1D997802EAD768EDACA6B,
 	PointCloudParser_GetInliers_m2915314526250023096E86FC71E18D83AA9E7165,
 	PointCloudParser__ctor_mEBB5E6F379DBFCEA2906F7BE92496CB04D6C7D13,
+	PlaneDetection__ctor_mE5F3C0EBFFF4380E16286DB9F6C5F9F96DB88E53,
+	PlaneDetection_get_age_m9538578C410A19C238C934DE7FD37EE6657D1F92,
+	PlaneDetection_set_age_m45AA6168CFE0D4CDD78D8E4195FD0B623C1F6CE1,
+	PointDetection__ctor_m428FD3652375BB282FDCBC2CC34570624FFC2826,
+	PointDetection_get_pos_m2EEFAC4589B8628855A0AB8342B8079C4AABBCA3,
+	PointDetection_set_pos_mB0631DE69EE3712A54B8640C2ABC16B34B9DC5E7,
+	PointDetection_get_age_mF35E53FC3F426F0674F97D98F0CACDD0E3ED730D,
+	PointDetection_set_age_mA645591D983879074E508868605E3AD78F55D127,
 };
-static const int32_t s_InvokerIndices[7] = 
+static const int32_t s_InvokerIndices[15] = 
 {
-	4183,
-	4183,
-	3309,
-	3394,
-	2997,
-	1384,
-	4183,
+	4185,
+	4185,
+	3311,
+	3396,
+	2999,
+	1385,
+	4185,
+	978,
+	4076,
+	3374,
+	1891,
+	4178,
+	3463,
+	4076,
+	3374,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	7,
+	15,
 	s_methodPointers,
 	0,
 	NULL,
