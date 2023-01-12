@@ -40,11 +40,23 @@ public class PointCloudParser : MonoBehaviour
         button.onClick.AddListener(Clear);
     }
 
-    private void Clear()
+    private void Age()
     {
         for (int i = 0; i < planes.Count; i++)
         {
             planes[i].age++;
+        }
+
+        for (int i = 0; i < detectedPoints.Count; i++)
+        {
+            detectedPoints[i].age++;
+        }
+    }
+
+    private void Clear()
+    {
+        for (int i = 0; i < planes.Count; i++)
+        {
             if (planes[i].age > planeLifetime)
             {
                 Destroy(planes[i].spawnedPlaneSzin);
@@ -56,7 +68,6 @@ public class PointCloudParser : MonoBehaviour
 
         for (int i = 0; i < detectedPoints.Count; i++)
         {
-            detectedPoints[i].age++;
             if (detectedPoints[i].age > pointLifetime)
             {
                 detectedPoints.RemoveAt(i);
@@ -65,8 +76,35 @@ public class PointCloudParser : MonoBehaviour
         }
     }
 
+    private void FilterPlanes()
+    {
+        for (int i = 0; i < planes.Count; i++)
+        {
+            for (int j = i + 1; j < planes.Count; j++)
+            {
+                if (IsSamePlane(planes[i].plane, planes[j].plane))
+                {
+                    Destroy(planes[j].spawnedPlaneSzin);
+                    Destroy(planes[j].spawnedPlaneFonak);
+                    planes[i].age = Math.Min(planes[i].age, planes[j].age);
+                    planes.RemoveAt(j);
+                    j--;
+                }
+            }
+        }
+    }
+
+    private bool IsSamePlane(Plane p1, Plane p2)
+    {
+        bool sameDir = Math.Abs(Vector3.Dot(p1.normal, p2.normal)) > 0.9;
+        bool sameDist = Math.Abs(Math.Abs(p1.distance) - Math.Abs(p2.distance)) < 0.01;
+        return sameDir && sameDist;
+    }
+
     private void PointCloudChanged(ARPointCloudChangedEventArgs obj)
     {
+        Age();
+        Clear();
         foreach (var pointCloud in obj.added)
         {
             foreach (var pos in pointCloud.positions)
@@ -82,14 +120,13 @@ public class PointCloudParser : MonoBehaviour
             }
         }
 
-        Clear();
-
         List<Vector3> points = new List<Vector3>();
         foreach (var p in detectedPoints)
         {
             points.Add(p.pos);
         }
         CollectPlanes(points);
+        FilterPlanes();
         countStr.text = $"{planes.Count} planes";
 
         if (Input.touchCount > 0)
@@ -121,10 +158,11 @@ public class PointCloudParser : MonoBehaviour
             Vector3 hitPoint = ray.GetPoint(minEnter);
             // planeClickedSzin = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.normal));
             // planeClickedFonak = Instantiate(planeClickedPrefab, hitPoint, Quaternion.FromToRotation(Vector3.up, minPlane.flipped.normal));
-            
+
 
             Vector3 cameraPos = arCameraObject.transform.position;
-            if (!minPlane.GetSide(cameraPos)) {
+            if (!minPlane.GetSide(cameraPos))
+            {
                 minPlane = minPlane.flipped;
             }
 

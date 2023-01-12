@@ -702,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195630376475459573, guid: 17a1f87d9f3894d91bdf2250df37fa00, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3195630376475459574, guid: 17a1f87d9f3894d91bdf2250df37fa00, type: 3}
       propertyPath: m_RootOrder
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab0e80cee9cc1d44928bfe488dd1e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PointCloudPrefab: {fileID: 2328162381534939576, guid: ee45b7ec1a8964beda10831053095b8a, type: 3}
+  m_PointCloudPrefab: {fileID: 0}
 --- !u!114 &1190866761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,9 +842,9 @@ MonoBehaviour:
   arCamera: {fileID: 684904661}
   countStr: {fileID: 1315816177}
   minDist: 0.003
-  minInliers: 75
+  minInliers: 50
   maxIter: 100
-  planeLifetime: 5
+  planeLifetime: 10
   pointLifetime: 5
   planeSzinPrefab: {fileID: 8939414973896462968, guid: bf7ca9d390b7042b78841af8bde229d2, type: 3}
   planeFonakPrefab: {fileID: 8939414973896462968, guid: ca406aece0b934bfc9963343c32fc5c3, type: 3}
@@ -975,7 +975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1455574109
 MonoBehaviour:
   m_ObjectHideFlags: 0
