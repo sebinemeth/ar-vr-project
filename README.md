@@ -10,3 +10,6 @@
 - Voilá!
 
 Tested on Android 11 & 12.
+
+## Credits
+-  Portal effect and Sponza shader: from video series [AR Portal Tutorial with Unity](https://www.youtube.com/watch?v=g78hQB8UKEM).
